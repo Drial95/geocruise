@@ -1,0 +1,710 @@
+/* 1. Selector universal */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables de color y tipografía */
+:root {
+    --azul-marino: hsl(213, 72%, 16%);
+    --azul-oceano: hsl(204, 70%, 38%);
+    --azul-claro: hsla(200, 75%, 88%, 0.45);
+    --coral-acento: hsl(14, 78%, 58%);
+    --fondo-pagina: hsl(210, 33%, 97%);
+    --fondo-tarjeta: rgba(255, 255, 255, 0.98);
+    --texto-principal: hsl(215, 28%, 17%);
+    --texto-secundario: hsl(215, 16%, 42%);
+    --borde-suave: rgba(15, 42, 74, 0.14);
+    --sombra-suave: 0 8px 24px rgba(11, 37, 69, 0.10);
+}
+
+/* Modo oscuro activado mediante clase en <body> desde JavaScript */
+body.modo-oscuro {
+    --fondo-pagina: hsl(218, 35%, 10%);
+    --fondo-tarjeta: rgba(24, 35, 52, 0.96);
+    --texto-principal: hsl(210, 30%, 92%);
+    --texto-secundario: hsl(215, 18%, 72%);
+    --borde-suave: rgba(148, 187, 233, 0.2);
+    --azul-claro: hsla(204, 70%, 38%, 0.25);
+    --sombra-suave: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* 2. Selectores de tipo de elemento */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo-pagina);
+    color: var(--texto-principal);
+    line-height: 1.65;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.25;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--azul-oceano);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+a:hover {
+    color: var(--coral-acento);
+}
+
+/* Aviso para navegadores sin JavaScript */
+.aviso-noscript {
+    background-color: #fff3cd;
+    color: #664d03;
+    border-bottom: 2px solid #ffda6a;
+    padding: 0.85rem 1.2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* 3. Cabecera */
+#cabecera-principal {
+    background: linear-gradient(135deg, hsl(213, 72%, 15%) 0%, hsl(204, 72%, 34%) 60%, hsl(194, 65%, 45%) 100%);
+    color: #ffffff;
+    padding: 3.2rem 1.5rem 2.8rem;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(11, 37, 69, 0.25);
+}
+
+.contenedor-cabecera {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.subtitulo-superior {
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 0.82rem;
+    color: hsla(45, 95%, 82%, 0.95);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+#cabecera-principal h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+.descripcion-blog {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* 4. Barra de navegación */
+#navegacion-principal {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(11, 37, 69, 0.96);
+    border-bottom: 3px solid var(--coral-acento);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+.contenedor-nav {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0.65rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.menu-nav {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+#navegacion-principal ul li a {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.45rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+/* Pseudo-clase :hover (raton encima) y clase activa (seleccionada/actual) */
+#navegacion-principal ul li a:hover,
+#navegacion-principal ul li a.activo {
+    background-color: var(--coral-acento);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.controles-lectura {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-utilidad {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 6px;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-utilidad:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+    transform: scale(1.04);
+}
+
+/* 5. Contenido y Barra lateral */
+.contenedor-principal {
+    max-width: 1180px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+    display: grid;
+    grid-template-columns: 2.35fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+#barra-estado {
+    background-color: var(--azul-claro);
+    border-left: 4px solid var(--azul-oceano);
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+#barra-estado p {
+    margin-bottom: 0;
+}
+
+/* 6. Entradas con bordes redondeados, sombreado y transiciones */
+.entrada-crucero {
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--borde-suave);
+    border-radius: 14px;
+    padding: 1.85rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.entrada-crucero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(11, 37, 69, 0.15);
+}
+
+.entrada-crucero.oculta {
+    display: none;
+}
+
+/* Selector por atributo */
+article[data-region="occidental"] .etiqueta-ruta {
+    background-color: hsla(14, 78%, 55%, 0.16);
+    color: hsl(14, 78%, 42%);
+}
+
+article[data-region="oriental"] .etiqueta-ruta {
+    background-color: hsla(198, 82%, 42%, 0.16);
+    color: hsl(198, 82%, 34%);
+}
+
+article[data-region="europa"] .etiqueta-ruta {
+    background-color: hsla(220, 55%, 45%, 0.16);
+    color: hsl(220, 55%, 38%);
+}
+
+body.modo-oscuro .etiqueta-ruta {
+    color: #f8fafc;
+}
+
+/* Selector padre > hijo */
+.entrada-crucero > header {
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+.etiqueta-ruta {
+    display: inline-block;
+    padding: 0.28rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.6rem;
+}
+
+.cabecera-entrada h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.45rem;
+    color: var(--azul-marino);
+}
+
+body.modo-oscuro .cabecera-entrada h2 {
+    color: hsl(200, 80%, 75%);
+}
+
+/* Selector de hermano adyacente (h2 + p) */
+.cabecera-entrada h2 + p {
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+    margin-bottom: 0;
+}
+
+/* Imágenes y pie de foto */
+.imagen-entrada {
+    margin: 1.25rem 0 1.4rem;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--borde-suave);
+}
+
+.imagen-entrada img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.45s ease, opacity 0.3s ease;
+}
+
+.imagen-entrada img:hover {
+    transform: scale(1.025);
+    opacity: 0.95;
+}
+
+.imagen-entrada figcaption {
+    background-color: var(--azul-claro);
+    color: var(--texto-secundario);
+    font-size: 0.86rem;
+    padding: 0.55rem 0.9rem;
+    font-style: italic;
+}
+
+/* Pseudo-elemento ::first-letter en la introducción de cada entrada */
+.introduccion-entrada::first-letter {
+    font-family: Georgia, serif;
+    font-size: 2.35rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.95;
+    margin-right: 0.45rem;
+    color: var(--coral-acento);
+}
+
+/* Botones de interacción de cada entrada */
+.acciones-entrada {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+}
+
+.btn-itinerario,
+.btn-favorito,
+.btn-enviar,
+.btn-secundario {
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 0.55rem 1.05rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease, color 0.25s ease;
+}
+
+.btn-itinerario {
+    background-color: var(--azul-oceano);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-itinerario:hover {
+    background-color: var(--azul-marino);
+    transform: translateY(-1px);
+}
+
+.btn-favorito {
+    background-color: transparent;
+    color: var(--coral-acento);
+    border: 2px solid var(--coral-acento);
+}
+
+.btn-favorito:hover,
+.btn-favorito.pulsado {
+    background-color: var(--coral-acento);
+    color: #ffffff;
+}
+
+/* 7. Itinerario, tabla de escalas y lista de consejos */
+.bloque-itinerario {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--borde-suave);
+}
+
+.bloque-itinerario.colapsado {
+    display: none;
+}
+
+.bloque-itinerario h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.85rem;
+    color: var(--azul-oceano);
+}
+
+body.modo-oscuro .bloque-itinerario h3 {
+    color: hsl(198, 82%, 68%);
+}
+
+.tabla-escalas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.4rem;
+    font-size: 0.93rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tabla-escalas thead tr {
+    background-color: var(--azul-marino);
+    color: #ffffff;
+    text-align: left;
+}
+
+.tabla-escalas th,
+.tabla-escalas td {
+    padding: 0.72rem 0.85rem;
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+/* Pseudo-clase :nth-child(even) para filas alternas */
+.tabla-escalas tbody tr:nth-child(even) {
+    background-color: var(--azul-claro);
+}
+
+.tabla-escalas tbody tr:hover {
+    background-color: hsla(14, 78%, 58%, 0.12);
+}
+
+.bloque-itinerario h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+}
+
+.lista-consejos {
+    padding-left: 1.4rem;
+}
+
+.lista-consejos li {
+    margin-bottom: 0.45rem;
+}
+
+/* 8. Comentarios y formulario */
+#seccion-comentarios {
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--borde-suave);
+    border-radius: 14px;
+    padding: 1.85rem;
+    box-shadow: var(--sombra-suave);
+}
+
+#seccion-comentarios h2 {
+    color: var(--azul-marino);
+    margin-bottom: 0.4rem;
+}
+
+body.modo-oscuro #seccion-comentarios h2 {
+    color: hsl(200, 80%, 75%);
+}
+
+#formulario-comentarios fieldset {
+    border: 1px solid var(--borde-suave);
+    border-radius: 10px;
+    padding: 1.35rem;
+    margin: 1rem 0 1.6rem;
+}
+
+#formulario-comentarios legend {
+    padding: 0 0.6rem;
+    font-weight: 700;
+    color: var(--azul-oceano);
+}
+
+.campo-formulario {
+    margin-bottom: 1rem;
+}
+
+.campo-formulario label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 0.35rem;
+}
+
+/* Selectores por atributo para inputs */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--borde-suave);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: var(--fondo-pagina);
+    color: var(--texto-principal);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--azul-oceano);
+    box-shadow: 0 0 0 3px hsla(204, 70%, 38%, 0.2);
+}
+
+.mensaje-error {
+    color: #c1121f;
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-height: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-enviar {
+    background-color: var(--coral-acento);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-enviar:hover {
+    background-color: hsl(14, 78%, 48%);
+    transform: translateY(-1px);
+}
+
+/* Lista de comentarios */
+#lista-comentarios h3 {
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+}
+
+.comentario-item {
+    background-color: var(--fondo-pagina);
+    border-left: 4px solid var(--azul-oceano);
+    border-radius: 8px;
+    padding: 0.95rem 1.1rem;
+    margin-bottom: 0.85rem;
+}
+
+.comentario-cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.comentario-etiqueta {
+    background-color: var(--azul-claro);
+    color: var(--azul-oceano);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+body.modo-oscuro .comentario-etiqueta {
+    color: hsl(198, 82%, 78%);
+}
+
+.comentario-item p {
+    margin-bottom: 0.35rem;
+}
+
+.btn-eliminar-comentario {
+    background: none;
+    border: none;
+    color: #c1121f;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* 9. Barra lateral */
+#barra-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tarjeta-lateral {
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--borde-suave);
+    border-radius: 14px;
+    padding: 1.35rem;
+    box-shadow: var(--sombra-suave);
+}
+
+.tarjeta-lateral h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 2px solid var(--coral-acento);
+    color: var(--azul-marino);
+}
+
+body.modo-oscuro .tarjeta-lateral h3 {
+    color: hsl(200, 80%, 75%);
+}
+
+#formulario-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--azul-oceano);
+    border: 1px solid var(--azul-oceano);
+}
+
+.btn-secundario:hover {
+    background-color: var(--azul-oceano);
+    color: #ffffff;
+}
+
+.lista-rutas-lateral {
+    list-style: none;
+}
+
+.lista-rutas-lateral li {
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+/* Pseudo-clase :last-child */
+.lista-rutas-lateral li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.lista-rutas-lateral span {
+    display: block;
+    font-size: 0.83rem;
+    color: var(--texto-secundario);
+    margin-top: 0.2rem;
+}
+
+/* Clase accesible para ocultar etiquetas visualmente */
+.texto-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* 10. Botón flotante "Volver arriba" */
+#btn-subir {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--azul-marino);
+    color: #ffffff;
+    font-size: 1.35rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.25s ease, visibility 0.3s ease;
+}
+
+#btn-subir.visible {
+    opacity: 0.92;
+    visibility: visible;
+}
+
+#btn-subir:hover {
+    background-color: var(--coral-acento);
+    transform: translateY(-3px);
+}
+
+/* 11. Pie de página */
+#pie-pagina {
+    background-color: var(--azul-marino);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 1.8rem 1rem;
+    margin-top: 2.5rem;
+}
+
+#pie-pagina p {
+    margin-bottom: 0.3rem;
+}
+
+.nota-pie {
+    font-size: 0.86rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 12. Diseño adaptable (Responsive) */
+@media (max-width: 920px) {
+    .contenedor-principal {
+        grid-template-columns: 1fr;
+    }
+
+    #cabecera-principal h1 {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .entrada-crucero,
+    #seccion-comentarios {
+        padding: 1.25rem;
+    }
+
+    .tabla-escalas {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .contenedor-nav {
+        justify-content: center;
+    }
+}

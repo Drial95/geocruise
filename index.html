@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog de viajes en crucero por el Mediterráneo Occidental, Mediterráneo Oriental y Europa Occidental.">
+    <title>Diario de a Bordo | Blog de Viajes en Crucero</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Aviso si el navegador bloquea la ejecución de JavaScript -->
+    <noscript>
+        <div class="aviso-noscript">
+            Tu navegador tiene JavaScript desactivado. Puedes leer las tres entradas completas del blog, pero el buscador, el filtro dinámico y el envío de comentarios requieren activar JavaScript.
+        </div>
+    </noscript>
+
+    <!-- CABECERA / BANNER -->
+    <header id="cabecera-principal">
+        <div class="contenedor-cabecera">
+            <p class="subtitulo-superior">Bienvenidos Cruceristas</p>
+            <h1>Diario de a Bordo: Viajes en Cruceros</h1>
+            <p class="descripcion-blog">
+                Tres grandes travesías por mar a través del Mediterráneo Occidental, Estambul e Islas Griegas y Europa Occidental.
+            </p>
+        </div>
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav id="navegacion-principal" aria-label="Navegación del blog">
+        <div class="contenedor-nav">
+            <ul class="menu-nav">
+                <li><a href="#todos" class="enlace-filtro activo" data-filtro="todos">Todos los cruceros</a></li>
+                <li><a href="#crucero-med-occidental" class="enlace-filtro" data-filtro="occidental">Mediterráneo Occidental</a></li>
+                <li><a href="#crucero-med-oriental" class="enlace-filtro" data-filtro="oriental">Mediterráneo Oriental</a></li>
+                <li><a href="#crucero-europa-occidental" class="enlace-filtro" data-filtro="europa">Europa Occidental</a></li>
+                <li><a href="#seccion-comentarios">Comentarios</a></li>
+            </ul>
+
+            <!-- Botones de Tamaño y Modo -->
+            <div class="controles-lectura">
+                <button type="button" id="btn-fuente-menos" class="btn-utilidad" title="Reducir tamaño de texto">A-</button>
+                <button type="button" id="btn-fuente-normal" class="btn-utilidad" title="Tamaño de texto normal">A</button>
+                <button type="button" id="btn-fuente-mas" class="btn-utilidad" title="Aumentar tamaño de texto">A+</button>
+                <button type="button" id="btn-tema" class="btn-utilidad btn-tema" title="Cambiar entre modo claro y oscuro">Modo oscuro</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO Y BARRA LATERAL -->
+    <div class="contenedor-principal">
+
+        <!-- ENTRADAS DEL BLOG -->
+        <main id="contenido-blog">
+
+            <!-- Resumen de estado del filtro / búsqueda -->
+            <section id="barra-estado" aria-live="polite">
+                <p id="mensaje-resultados">Mostrando 3 entradas de cruceros.</p>
+            </section>
+
+            <!-- ENTRADA 1: CRUCERO MEDITERRÁNEO OCCIDENTAL
+                 Ruta: Barcelona, Palma de Mallorca, Palermo, Civitavecchia (Roma), Génova, Toulon (Mónaco) y vuelta a Barcelona -->
+            <article id="crucero-med-occidental" class="entrada-crucero" data-region="occidental">
+                <header class="cabecera-entrada">
+                    <span class="etiqueta-ruta">Ruta 01 · 7 días / 6 noches</span>
+                    <h2>Crucero por el Mediterráneo Occidental: desde Barcelona a Tolon pasando por Roma</h2>
+                    <p class="metadatos">
+                        Publicado el <time datetime="2026-05-14">14 de mayo de 2026</time> · Puerto base: <strong>Barcelona (BCN)</strong>
+                    </p>
+                </header>
+
+                <!-- Imagen de la entrada -->
+                <figure class="imagen-entrada">
+                    <img src="img/med_occidental.svg">
+                    <figcaption>Travesía circular con salida y regreso en el puerto de Barcelona recorriendo España, Italia y Francia.</figcaption>
+                </figure>
+
+                <p class="introduccion-entrada">
+                    El Mediterráneo Occidental es el gran clásico de los viajes en crucero: combina ciudades monumentales, historia romana, puertos históricos y la elegancia de la Costa Azul en una sola semana de navegación.
+                </p>
+
+                <p>
+                    Zarpamos desde <strong>Barcelona (BCN)</strong> al caer la tarde para amanecer al día siguiente frente a la catedral gótica de <strong>Palma de Mallorca</strong>. 
+                    Tras cruzar el mar Tirreno hacia Sicilia, descubrimos el bullicio histórico de <strong>Palermo</strong> antes de atracar en <strong>Civitavecchia</strong>, la puerta marítima para recorrer <strong>Roma</strong>, el Coliseo y el Vaticano. 
+                    El tramo final nos lleva al puerto ligur de <strong>Génova</strong> y a <strong>Toulon</strong>, escala ideal para acercarse al glamour de <strong>Mónaco</strong> y Montecarlo antes de poner rumbo de regreso a <strong>Barcelona</strong>.
+                </p>
+
+                <!-- Botones Escalas y Likes -->
+                <div class="acciones-entrada">
+                    <button type="button" class="btn-itinerario" data-objetivo="itinerario-occidental">Ocultar tabla de escalas</button>
+                    <button type="button" class="btn-favorito" data-crucero="occidental">❤ Me gusta (<span class="contador-likes">42</span>)</button>
+                </div>
+
+                <!-- Tabla de escalas -->
+                <div id="itinerario-occidental" class="bloque-itinerario">
+                    <h3>Itinerario y escalas</h3>
+                    <table class="tabla-escalas">
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Puerto de escala</th>
+                                <th>País</th>
+                                <th>Imprescindible en la visita</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Día 1</td>
+                                <td>Barcelona (BCN) — Salida</td>
+                                <td>España</td>
+                                <td>Embarque en el Moll Adossat y vistas de Montjuïc al zarpar.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 2</td>
+                                <td>Palma de Mallorca</td>
+                                <td>España</td>
+                                <td>Catedral de Santa María (La Seu), casco antiguo y Castillo de Bellver.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 3</td>
+                                <td>Palermo</td>
+                                <td>Italia</td>
+                                <td>Catedral de Palermo, Quattro Canti y gastronomía siciliana.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 4</td>
+                                <td>Civitavecchia (para ver Roma)</td>
+                                <td>Italia</td>
+                                <td>Excursión a Roma: Coliseo, Fontana di Trevi y Plaza de San Pedro.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 5</td>
+                                <td>Génova</td>
+                                <td>Italia</td>
+                                <td>Via Garibaldi, Puerto Antiguo y el centro histórico medieval.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 6</td>
+                                <td>Toulon (para ver Mónaco)</td>
+                                <td>Francia / Mónaco</td>
+                                <td>Excursión por la Costa Azul hasta el Palacio del Príncipe y Montecarlo.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 7</td>
+                                <td>Barcelona (BCN) — Regreso</td>
+                                <td>España</td>
+                                <td>Desembarque temprano en el puerto de Barcelona.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Recomendaciones / Tips -->
+                    <h4>Tips para esta ruta</h4>
+                    <ol class="lista-consejos">
+                        <li>Reserva el traslado a Roma desde Civitavecchia con antelación para aprovechar al máximo las horas en la ciudad.</li>
+                        <li>En Toulon, planifica bien el horario de regreso desde Mónaco teniendo en cuenta el tráfico de la Costa Azul.</li>
+                        <li>Sube a cubierta superior durante la salida de Barcelona y la llegada a Palma para disfrutar de las mejores panorámicas.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <!-- ENTRADA 2: CRUCERO MEDITERRÁNEO ORIENTAL
+                 Ruta: Atenas, Estambul, Rodas, Míkonos, Santorini, Creta y vuelta a Atenas -->
+            <article id="crucero-med-oriental" class="entrada-crucero" data-region="oriental">
+                <header class="cabecera-entrada">
+                    <span class="etiqueta-ruta">Ruta 02 · 7 días / 6 noches</span>
+                    <h2>Crucero por el Mediterráneo Oriental: Atenas, Estambul e Islas Griegas</h2>
+                    <p class="metadatos">
+                        Publicado el <time datetime="2026-07-03">3 de julio de 2026</time> · Puerto base: <strong>Atenas (El Pireo)</strong>
+                    </p>
+                </header>
+
+                <figure class="imagen-entrada">
+                    <img src="img/med_oriental.svg">
+                    <figcaption>Navegación entre civilizaciones clásicas: de la Acrópolis de Atenas al Bósforo y las islas Cícladas.</figcaption>
+                </figure>
+
+                <p class="introduccion-entrada">
+                    Pocas rutas marítimas ofrecen un contraste tan hipnótico como el Mediterráneo Oriental: mitología griega, bazares otomanos, fortalezas medievales y pueblos blancos suspendidos sobre acantilados volcánicos.
+                </p>
+
+                <p>
+                    La aventura comienza en <strong>Atenas</strong>, desde donde navegamos hacia el estrecho de los Dardanelos para recalar en la monumental <strong>Estambul</strong>, puente entre Europa y Asia. 
+                    Al descender de nuevo por el mar Egeo, caminamos por la ciudad amurallada de <strong>Rodas</strong>, nos perdemos entre los molinos de viento de <strong>Míkonos</strong> y contemplamos la caldera volcánica de <strong>Santorini</strong>. 
+                    Antes de completar el círculo de vuelta a <strong>Atenas</strong>, hacemos escala en <strong>Creta</strong>, cuna de la civilización minoica.
+                </p>
+
+                <div class="acciones-entrada">
+                    <button type="button" class="btn-itinerario" data-objetivo="itinerario-oriental">Ocultar tabla de escalas</button>
+                    <button type="button" class="btn-favorito" data-crucero="oriental">❤ Me gusta (<span class="contador-likes">79</span>)</button>
+                </div>
+
+                <div id="itinerario-oriental" class="bloque-itinerario">
+                    <h3>Itinerario y escalas</h3>
+                    <table class="tabla-escalas">
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Puerto de escala</th>
+                                <th>País</th>
+                                <th>Imprescindible en la visita</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Día 1</td>
+                                <td>Atenas (El Pireo) — Salida</td>
+                                <td>Grecia</td>
+                                <td>Acrópolis, Partenón y paseo por el barrio histórico de Plaka.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 2</td>
+                                <td>Estambul</td>
+                                <td>Turquía</td>
+                                <td>Santa Sofía, Mezquita Azul, Palacio de Topkapi y Gran Bazar.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 3</td>
+                                <td>Rodas</td>
+                                <td>Grecia</td>
+                                <td>Ciudad Medieval de los Caballeros y Palacio del Gran Maestre.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 4</td>
+                                <td>Míkonos</td>
+                                <td>Grecia</td>
+                                <td>Pequeña Venecia, molinos de Kato Mili y callejuelas encaladas.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 5</td>
+                                <td>Santorini</td>
+                                <td>Grecia</td>
+                                <td>Subida en teleférico a Fira, cúpulas azules de Oia y vistas a la caldera.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 6</td>
+                                <td>Creta (Heraclión)</td>
+                                <td>Grecia</td>
+                                <td>Palacio de Cnosos, puerto veneciano y gastronomía cretense.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 7</td>
+                                <td>Atenas (El Pireo) — Regreso</td>
+                                <td>Grecia</td>
+                                <td>Llegada matinal y cierre de la travesía por el mar Egeo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Tips para esta ruta</h4>
+                    <ol class="lista-consejos">
+                        <li>En Santorini, el desembarque suele realizarse en lanchas: pide turno temprano para subir a Fira sin colas.</li>
+                        <li>Lleva calzado cómodo y protección solar, ya que las visitas arqueológicas en Atenas, Rodas y Creta tienen poca sombra.</li>
+                        <li>No te pierdas la entrada al puerto de Estambul desde cubierta: la silueta de los minaretes al amanecer es inolvidable.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <!-- ENTRADA 3: CRUCERO EUROPA OCCIDENTAL
+                 Ruta: Tenerife, Lisboa, Vigo, Dover (Londres), Le Havre (París) y Ámsterdam -->
+            <article id="crucero-europa-occidental" class="entrada-crucero" data-region="europa">
+                <header class="cabecera-entrada">
+                    <span class="etiqueta-ruta">Ruta 03 · 9 días / 8 noches</span>
+                    <h2>Crucero por Europa Occidental: desde Canarias a Ámsterdam pasando por Francia y UK</h2>
+                    <p class="metadatos">
+                        Publicado el <time datetime="2026-09-21">21 de septiembre de 2026</time> · Travesía lineal: <strong>Tenerife &rarr; Ámsterdam</strong>
+                    </p>
+                </header>
+
+                <figure class="imagen-entrada">
+                    <img src="img/eu_occidental.svg">
+                    <figcaption>Gran ruta atlántica conectando España, Portugal, Inglaterra, Francia y Países Bajos.</figcaption>
+                </figure>
+
+                <p class="introduccion-entrada">
+                    A diferencia de los itinerarios circulares, este viaje hacia el norte nos permite ver cómo cambia el paisaje, la luz y la arquitectura desde la eterna primavera canaria hasta el mar del Norte.
+                </p>
+
+                <p>
+                    Partimos desde <strong>Tenerife</strong> rumbo a la desembocadura del Tajo para atracar en <strong>Lisboa</strong>, pasando bajo el puente 25 de Abril. 
+                    Tras disfrutar de la ría y la gastronomía gallega en <strong>Vigo</strong>, cruzamos el golfo de Vizcaya hacia el Canal de la Mancha. 
+                    Allí nos esperan los acantilados blancos de <strong>Dover</strong>, puerta de entrada para visitar <strong>Londres</strong>, y el puerto normando de <strong>Le Havre</strong>, desde donde podemos escaparnos a <strong>París</strong>. 
+                    El broche final llega en <strong>Ámsterdam</strong>, entre canales, puentes y bicicletas.
+                </p>
+
+                <div class="acciones-entrada">
+                    <button type="button" class="btn-itinerario" data-objetivo="itinerario-europa">Ocultar tabla de escalas</button>
+                    <button type="button" class="btn-favorito" data-crucero="europa">❤ Me gusta (<span class="contador-likes">105</span>)</button>
+                </div>
+
+                <div id="itinerario-europa" class="bloque-itinerario">
+                    <h3>Itinerario y escalas</h3>
+                    <table class="tabla-escalas">
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Puerto de escala</th>
+                                <th>País</th>
+                                <th>Imprescindible en la visita</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Día 1</td>
+                                <td>Tenerife (Santa Cruz) — Salida</td>
+                                <td>España</td>
+                                <td>Auditorio de Tenerife, Parque Nacional del Teide y embarque atlántico.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 3</td>
+                                <td>Lisboa</td>
+                                <td>Portugal</td>
+                                <td>Torre de Belém, barrio de Alfama, tranvía 28 y pasteles de nata.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 4</td>
+                                <td>Vigo</td>
+                                <td>España</td>
+                                <td>Casco Vello, Monte do Castro, ría de Vigo o escapada a Santiago.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 6</td>
+                                <td>Dover (para ver Londres)</td>
+                                <td>Reino Unido</td>
+                                <td>Acantilados Blancos y excursión a Londres (Westminster, Big Ben y Támesis).</td>
+                            </tr>
+                            <tr>
+                                <td>Día 7</td>
+                                <td>Le Havre (para ver París)</td>
+                                <td>Francia</td>
+                                <td>Arquitectura moderna de Le Havre o jornada completa en París y Torre Eiffel.</td>
+                            </tr>
+                            <tr>
+                                <td>Día 9</td>
+                                <td>Ámsterdam — Llegada final</td>
+                                <td>Países Bajos</td>
+                                <td>Anillo de canales, Rijksmuseum, Barrio de Jordaan y desembarque.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Consejos clave para esta ruta</h4>
+                    <ol class="lista-consejos">
+                        <li>Prepara la maleta por capas: saldrás con clima suave en Tenerife y terminarás con brisa fresca en el Canal de la Mancha y Ámsterdam.</li>
+                        <li>Comprueba la documentación de entrada vigente para Reino Unido antes de la escala en Dover.</li>
+                        <li>Tanto Londres desde Dover como París desde Le Havre implican trayectos largos: prioriza excursiones organizadas con regreso garantizado al barco.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <!-- COMENTARIOS -->
+            <section id="seccion-comentarios">
+                <h2>Comparte tu experiencia a bordo</h2>
+                <p>¿Has realizado alguno de estos itinerarios o estás planeando tu próximo embarque? Deja tu comentario en el cuaderno de bitácora.</p>
+
+                <!-- Formulario -->
+                <form id="formulario-comentarios" novalidate>
+                    <fieldset>
+                        <legend>Nuevo comentario de viajero</legend>
+
+                        <div class="campo-formulario">
+                            <label for="nombre-autor">Nombre o apodo *</label>
+                            <input type="text" id="nombre-autor" name="nombre" placeholder="Ej. Laura M." required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="correo-autor">Correo electrónico * (no se publicará)</label>
+                            <input type="email" id="correo-autor" name="correo" placeholder="nombre@gmail.com" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="ruta-comentario">Crucero relacionado</label>
+                            <select id="ruta-comentario" name="ruta">
+                                <option value="Mediterráneo Occidental">Crucero 1: Mediterráneo Occidental</option>
+                                <option value="Mediterráneo Oriental">Crucero 2: Mediterráneo Oriental</option>
+                                <option value="Europa Occidental">Crucero 3: Europa Occidental</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="texto-comentario">Tu comentario *</label>
+                            <textarea id="texto-comentario" name="comentario" rows="4" placeholder="Cuéntanos qué escala te gustó más o qué consejo darías..." required></textarea>
+                        </div>
+
+                        <p id="error-formulario" class="mensaje-error" role="alert"></p>
+
+                        <button type="submit" class="btn-enviar">Publicar comentario</button>
+                    </fieldset>
+                </form>
+
+                <!-- Lista de comentarios-->
+                <div id="lista-comentarios">
+                    <h3>Comentarios recientes (<span id="total-comentarios">2</span>)</h3>
+
+                    <article class="comentario-item">
+                        <header class="comentario-cabecera">
+                            <strong>Carlos R.</strong>
+                            <span class="comentario-etiqueta">Mediterráneo Occidental</span>
+                        </header>
+                        <p>Hicimos exactamente esta ruta saliendo desde Barcelona y la escala en Civitavecchia para ver Roma fue espectacular. Recomiendo madrugar muchísimo ese día.</p>
+                    </article>
+
+                    <article class="comentario-item">
+                        <header class="comentario-cabecera">
+                            <strong>Elena V.</strong>
+                            <span class="comentario-etiqueta">Mediterráneo Oriental</span>
+                        </header>
+                        <p>El atardecer saliendo de Santorini y la mañana en Estambul hacen que este crucero sea inolvidable. ¡Muy útiles las tablas de escalas!</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- BARRA LATERAL -->
+        <aside id="barra-lateral">
+            <!-- Buscador interactivo -->
+            <section class="tarjeta-lateral">
+                <h3>Buscar puerto o destino</h3>
+                <form id="formulario-busqueda" role="search">
+                    <label for="campo-busqueda" class="texto-oculto">Buscar ciudad o crucero</label>
+                    <input type="search" id="campo-busqueda" name="busqueda" placeholder="Ej. Roma, Santorini, Vigo, París...">
+                    <button type="button" id="btn-limpiar-busqueda" class="btn-secundario">Limpiar</button>
+                </form>
+            </section>
+
+            <!-- Índice rápido de rutas -->
+            <section class="tarjeta-lateral">
+                <h3>Resumen de rutas</h3>
+                <ul class="lista-rutas-lateral">
+                    <li>
+                        <a href="#crucero-med-occidental"><strong>Mediterráneo Occidental</strong></a>
+                        <span>Barcelona · Palma · Palermo · Roma · Génova · Mónaco</span>
+                    </li>
+                    <li>
+                        <a href="#crucero-med-oriental"><strong>Mediterráneo Oriental</strong></a>
+                        <span>Atenas · Estambul · Rodas · Míkonos · Santorini · Creta</span>
+                    </li>
+                    <li>
+                        <a href="#crucero-europa-occidental"><strong>Europa Occidental</strong></a>
+                        <span>Tenerife · Lisboa · Vigo · Londres · París · Ámsterdam</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Sobre el blog -->
+            <section class="tarjeta-lateral">
+                <h3>Sobre este blog</h3>
+                <p>
+                    Proyecto desarrollado para la <strong>Actividad 1 de Desarrollo de Aplicaciones en Red</strong>, aplicando HTML5, CSS y JavaScript.
+                </p>
+            </section>
+        </aside>
+    </div>
+
+    <!-- Botón flotante para subir al inicio -->
+    <button type="button" id="btn-subir" title="Volver arriba" aria-label="Volver al principio de la página">&uarr;</button>
+
+    <!-- PIE DE PÁGINA / FOOTER -->
+    <footer id="pie-pagina">
+        <p>&copy; 2026 Blog de Viajes en Crucero</p>
+        <p class="nota-pie">Elaborado por Adrián Alonso.</p>
+    </footer>
+</body>
+</html>
